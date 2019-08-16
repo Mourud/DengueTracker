@@ -1,4 +1,4 @@
-package com.company.model;
+package com.company.model.datatype;
 
 /**
  * Represents Blood pressure data type

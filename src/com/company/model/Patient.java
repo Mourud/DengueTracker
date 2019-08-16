@@ -1,7 +1,6 @@
 package com.company.model;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.company.model.datatype.MedicalInformation;
 
 // TODO: Implement Barcode ID system
 

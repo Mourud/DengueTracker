@@ -1,4 +1,6 @@
-package com.company.model;
+package com.company.model.datatype;
+
+import com.company.model.datatype.BloodPressure;
 
 public class Vitals {
 

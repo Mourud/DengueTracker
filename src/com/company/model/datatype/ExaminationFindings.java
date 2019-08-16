@@ -1,4 +1,4 @@
-package com.company.model;
+package com.company.model.datatype;
 
 public class ExaminationFindings {
     //TODO: Finish this class

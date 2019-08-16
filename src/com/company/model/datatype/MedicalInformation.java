@@ -1,4 +1,6 @@
-package com.company.model;
+package com.company.model.datatype;
+
+import com.company.model.Disease;
 
 import java.util.List;
 
