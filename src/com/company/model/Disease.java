@@ -1,4 +1,4 @@
 package com.company.model;
 
-public class Disease {
+public abstract class Disease {
 }

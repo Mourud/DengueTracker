@@ -3,14 +3,15 @@ package com.company.model;
 import java.util.ArrayList;
 import java.util.List;
 
-// TODO: Urination time test
+// TODO: Implement Barcode ID system
 
 /**
  * Represents a Patient
  */
 public class Patient {
 
-    // Fields
+    // FIELDS
+
     /**
      * Stores unique identifier
      */
@@ -24,47 +25,22 @@ public class Patient {
      */
     private String lastName;
     /**
-     * Stores list of diseases
+     * Stores age
      */
-    private List<Disease> diseases;
+    private int age; //TODO: Make age type to use months and age
     /**
-     * Stores pulse rate
+     * Stores weight
      */
-    private int pulseRate;
+    private double weight;
     /**
-     * Stores platelet count
+     * Stores medical information
      */
-    private int plateletCount;
-    /**
-     * Stores hematocrit count
-     */
-    private int hematocritCount;
-    /**
-     * Stores temperature in fahrenheit
-     */
-    private double temperature;
-    /**
-     * Stores IV fluid and it's drop rate
-     */
-    private FluidInfo fluidInfo;
-    /**
-     * CRT examination positive or negative
-     */
-    private boolean CRTTest;
-    /**
-     * CRT examination positive or negative
-     */
-    private boolean NS1Test;
-    /**
-     * Stores systolic and diastolic blood pressure
-     */
-    private BloodPressure bp;
+    private MedicalInformation medicalInformation;
 
-
-    //Constructors
+    //CONSTRUCTORS
 
     /**
-     * Constructs patient with id, first name and last name
+     * Constructs patient with ID, first name and last name
      *
      * @param ID        unique identifier
      * @param firstName the first name
@@ -77,70 +53,26 @@ public class Patient {
     }
 
     /**
-     * Constructs patient with id, first name and last name
+     * Constructs patient with ID, first name, last name, weight and age
      *
      * @param ID        unique identifier
      * @param firstName the first name
      * @param lastName  the last name
+     * @param age       the age
+     * @param weight    the weight
      */
-    public Patient(int ID, String firstName, String lastName, Disease disease) {
+    public Patient(int ID, String firstName, String lastName, int age, double weight) {
         this.ID = ID;
         this.firstName = firstName;
         this.lastName = lastName;
-
-        diseases = new ArrayList<>();
-        diseases.add(disease);
+        this.age = age;
     }
 
-    /**
-     * @param ID          unique identifier
-     * @param firstName   the first name
-     * @param lastName    the last name
-     * @param disease     the disease admitted for
-     * @param pulseRate   the pulse rate
-     * @param temperature the body temperature in fahrenheit
-     * @param bp          the blood pressure
-     */
-    public Patient(int ID, String firstName, String lastName, Disease disease, int pulseRate, double temperature, BloodPressure bp) {
-        this.ID = ID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+    //SETTERS
 
     /**
-     * @param ID unique identifier
-     * @param firstName the first name
-     * @param lastName the last name
-     * @param disease the disease admitted for
-     * @param pulseRate the pulse rate
-     * @param plateletCount the platelet count
-     * @param hematocritCount the hematocrit count
-     * @param temperature the body temperature in fahrenheit
-     * @param fluidInfo the information for the IV fluid being used
-     * @param CRTTest CRT test result
-     * @param NS1Test NS1 test result
-     * @param bp blood pressure test result
-     */
-    public Patient(int ID, String firstName, String lastName, Disease disease, int pulseRate, int plateletCount,
-                   int hematocritCount, double temperature, FluidInfo fluidInfo, boolean CRTTest, boolean NS1Test,
-                   BloodPressure bp) {
-        this.ID = ID;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.pulseRate = pulseRate;
-        this.plateletCount = plateletCount;
-        this.hematocritCount = hematocritCount;
-        this.temperature = temperature;
-        this.fluidInfo = fluidInfo;
-        this.CRTTest = CRTTest;
-        this.NS1Test = NS1Test;
-        this.bp = bp;
-        diseases = new ArrayList<>();
-        diseases.add(disease);
-    }
-
-    /**
-     * set the first name
+     * sets the first name
+     *
      * @param firstName the first name
      */
     public void setFirstName(String firstName) {
@@ -148,73 +80,94 @@ public class Patient {
     }
 
     /**
-     * set the
-     * @param lastName
+     * sets the last name
+     *
+     * @param lastName the last name
      */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
     /**
-     * @param diseases
+     * sets the age
+     *
+     * @param age the age
      */
-    public void setDiseases(List<Disease> diseases) {
-        this.diseases = diseases;
+    public void setAge(int age) {
+        this.age = age;
     }
 
     /**
-     * @param pulseRate
+     * sets the weight
+     *
+     * @param weight the weight
      */
-    public void setPulseRate(int pulseRate) {
-        this.pulseRate = pulseRate;
+    public void setWeight(double weight) {
+        this.weight = weight;
     }
 
     /**
-     * @param plateletCount
+     * sets the medical information
+     *
+     * @param medicalInformation the medical information
      */
-    public void setPlateletCount(int plateletCount) {
-        this.plateletCount = plateletCount;
+    public void setMedicalInformation(MedicalInformation medicalInformation) {
+        this.medicalInformation = medicalInformation;
+    }
+
+    //GETTERS
+
+    /**
+     * returns ID
+     *
+     * @return <code>ID</code>
+     */
+    public int getID() {
+        return ID;
     }
 
     /**
-     * @param hematocritCount
+     * returns first name
+     *
+     * @return <code>firstName</code>
      */
-    public void setHaematocritCount(int hematocritCount) {
-        this.hematocritCount = hematocritCount;
+    public String getFirstName() {
+        return firstName;
     }
 
     /**
-     * @param temperature
+     * returns last name
+     *
+     * @return <code>lastName</code>
      */
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
+    public String getLastName() {
+        return lastName;
     }
 
     /**
-     * @param fluidInfo
+     * returns age
+     *
+     * @return <code>age</code>
      */
-    public void setFluidInfo(FluidInfo fluidInfo) {
-        this.fluidInfo = fluidInfo;
+    public int getAge() {
+        return age;
     }
 
     /**
-     * @param CRTTest
+     * returns weight
+     *
+     * @return <code>weight</code>
      */
-    public void setCRTTest(boolean CRTTest) {
-        this.CRTTest = CRTTest;
+    public double getWeight() {
+        return weight;
     }
 
     /**
-     * @param NS1Test
+     * returns medical information
+     *
+     * @return <code>medicalInformation</code>
      */
-    public void setNS1Test(boolean NS1Test) {
-        this.NS1Test = NS1Test;
-    }
-
-    /**
-     * @param bp
-     */
-    public void setBp(BloodPressure bp) {
-        this.bp = bp;
+    public MedicalInformation getMedicalInformation() {
+        return medicalInformation;
     }
 }
